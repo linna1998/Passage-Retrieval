@@ -72,8 +72,8 @@ seg = Seg()
 # 训练模型
 ss = SentenceSimilarity(seg)
 ss.set_sentences(train_sentence)
-#ss.TfidfModel()         # tfidf模型
-ss.LsiModel()         # lsi模型
+ss.TfidfModel()         # tfidf模型
+#ss.LsiModel()         # lsi模型
 #ss.LdaModel()         # lda模型
 
 # 测试与问题的相似度
