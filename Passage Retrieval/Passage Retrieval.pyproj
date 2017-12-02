@@ -22,7 +22,22 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="demo.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="fileObject.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Passage_Retrieval.py" />
+    <Compile Include="sentence.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sentenceSimilarity.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zhcnSegment.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
