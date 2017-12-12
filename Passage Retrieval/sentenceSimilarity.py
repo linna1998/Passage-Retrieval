@@ -29,7 +29,7 @@ class SentenceSimilarity():
         return cuted_sentences
 
     # 构建其他复杂模型前需要的简单模型
-    def simple_model(self,min_frequency = 1):
+    def simple_model(self,min_frequency=1):
         self.texts = self.get_cuted_sentences()
 
         # 删除低频词
@@ -109,8 +109,11 @@ class SentenceSimilarity():
         B = np.array(B)       
         B = np.transpose([B])
         num = float(np.dot(A, B)) 
-        denom = linalg.norm(A) * linalg.norm(B)           
-        cos = num / denom #余弦值  
-        sim = 0.5 + 0.5 * cos #归一化  
+        denom = linalg.norm(A) * linalg.norm(B)     
+        if denom != 0:                              
+            cos = num / denom #余弦值
+            sim = 0.5 + 0.5 * cos #归一化
+        else:
+            sim = 0.5 #强行设置默认值？
         return sim
 
