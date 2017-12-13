@@ -117,3 +117,11 @@ class SentenceSimilarity():
             sim = 0.5 #强行设置默认值？
         return sim
 
+    def MYsimilarity2(self, question, sentences):
+        A = np.array([self.index[self.sentence2vec(s)] for s in sentences])
+        B = np.array([self.index[self.sentence2vec(question)]]).T
+        num = np.dot(A, B)
+        denom = (linalg.norm(A, axis=1) * linalg.norm(B)).reshape((-1,1))
+        cos = num / denom #余弦值 
+        sim = 0.5 + 0.5 * cos #归一化  
+        return sim
