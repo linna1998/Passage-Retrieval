@@ -5,11 +5,15 @@ from fileObject import FileObj
 from sentenceSimilarity import SentenceSimilarity
 from sentence import Sentence
 
+def SplitSentence(docs): 
+    r = re.compile(r'[.?!。？！]')
+    return list(chain(*[r.split(doc) for doc in docs]))
+
 def ReadFile(articlename, questionname, keywordsname):
     f1 = open(articlename, 'r')
     list_ret = list()
     for f_line in f1.readlines():   
-        f_line = f_line.strip('\n')          
+        f_line = f_line.strip('\n')                  
         f_line = f_line.split('。')
         for s_str in  f_line:
             if '？' in s_str:
@@ -81,6 +85,8 @@ score_sentence = []
 for i in range(0,len(test_sentence)):
     score = ss.MYsimilarity(question, test_sentence[i])   
     score_sentence.append(score)    
+
+new_score = ss.MYsimilarity2(question, test_sentence)
 
 #输出到文件
 WriteFile("sentence.txt", important_sentence)
