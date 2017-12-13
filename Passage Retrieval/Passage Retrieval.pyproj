@@ -28,6 +28,9 @@
     <Compile Include="fileObject.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Optimize.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Passage_Retrieval.py" />
     <Compile Include="sentence.py">
       <SubType>Code</SubType>
